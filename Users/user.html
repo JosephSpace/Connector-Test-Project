@@ -1,0 +1,308 @@
+<html>
+<!----======== CSS and Boxicons ======== -->
+<head>
+  <!--Css-->
+    <link rel="stylesheet" href="../sidebar/sidebar.css">
+  <!--Bootstrap-->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/apexcharts/3.35.5/apexcharts.min.js"></script>  
+  <!--İcons and Fonts-->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp" rel="stylesheet">
+        <title>ZkConnector</title>
+    </head>
+    
+    <body>
+    
+        <div class="container">
+            <!-- Sidebar Section -->
+            <aside>
+                <div class="toggle">
+                    <div class="logo">
+                        <img src="https://res.cloudinary.com/apideck/image/upload/v1606355124/icons/ziraatkatilim-tr.png">
+                        <h2>Conn<span class="danger">ector</span></h2>
+                    </div>
+                    <div class="close" id="close-btn">
+                        <span class="material-icons-sharp">
+                            close
+                        </span>
+                    </div>
+                </div>
+    
+                <div class="sidebar">
+                    <a href="../Dashboard/dashboard.html">
+                        <span class="material-icons-sharp">
+                            home
+                        </span>
+                        <h3>Dashboard</h3>
+                    </a>
+                    <a href="../searchbar/searchbar.html">
+                      <span class="material-icons-sharp">
+                          search
+                      </span>
+                      <h3>Searchbar</h3>
+                    </a>
+                    
+                    <a href="../Users/user.html" class="active">
+                    <span class="material-icons-sharp">
+                        person_outline
+                    </span>
+                    <h3>Users</h3>
+                    </a>
+        
+                    <a href="/3-Test Ortamı/1-Guac-Dashboard/main.html">
+                        <span class="material-icons-sharp">
+                          terminal
+                        </span>
+                          <h3>Test Ortamı</h3>
+                        </a>
+                    
+                    <a href="../settings/settings.html">
+                        <span class="material-icons-sharp">
+                            report_gmailerrorred
+                        </span>
+                        <h3>İp Host</h3>
+                    </a>
+                    <a href="../connect/connect.html">
+                        <span class="material-icons-sharp">
+                            settings
+                        </span>
+                        <h3>Connect</h3>
+                    </a>
+                    <a href="#">
+                        <span class="material-icons-sharp">
+                            add
+                        </span>
+                        <h3>New Login</h3>
+                    </a>
+                    <a href="#">
+                        <span class="material-icons-sharp">
+                            logout
+                        </span>
+                        <h3>Logout</h3>
+                    </a>
+                </div>
+            </aside>
+            <!-- End of Sidebar Section -->
+
+        <!-- Main Content -->
+        <main>
+            <div class="right-section">
+                <div class="nav">
+                    <button id="menu-btn">
+                        <span class="material-icons-sharp">
+                            menu
+                        </span>
+                    </button>
+                    <div class="dark-mode">
+                        <span class="material-icons-sharp active">
+                            light_mode
+                        </span>
+                        <span class="material-icons-sharp">
+                            dark_mode
+                        </span>
+                    </div>
+    
+                    <div class="profile">
+                        <div class="info">
+                            <p>Hey, <b>ya550047</b></p>
+                            <small class="text-muted">Admin</small>
+                        </div>
+                        <div class="profile-photo">
+                            <img src="https://res.cloudinary.com/apideck/image/upload/v1606355124/icons/ziraatkatilim-tr.png">
+                        </div>
+                    </div>
+                </div>
+            </div>
+                <!-- End of Nav -->
+    
+                
+    
+            <!-- Analyses -->
+            <div class="analyse">
+                <div class="sales">
+                    <div class="status">
+                        <div class="info">
+                            <h3>Users</h3>
+                            <h1>{Data}</h1>
+                        </div>
+                        <div class="progresss">
+                            <svg>
+                                <circle cx="38" cy="38" r="36"></circle>
+                            </svg>
+                            <div class="percentage">
+                                <p>+81%</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="visits">
+                    <div class="status">
+                        <div class="info">
+                            <h3>Systems</h3>
+                            <h1>{Data}</h1>
+                        </div>
+                        <div class="progresss">
+                            <svg>
+                                <circle cx="38" cy="38" r="36"></circle>
+                            </svg>
+                            <div class="percentage">
+                                <p>-48%</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="searches">
+                    <div class="status">
+                        <div class="info">
+                            <h3>Applications</h3>
+                            <h1>{Data}</h1>
+                        </div>
+                        <div class="progresss">
+                            <svg>
+                                <circle cx="38" cy="38" r="36"></circle>
+                            </svg>
+                            <div class="percentage">
+                                <p>+21%</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- End of Analyses -->
+
+            <!-- New Users Section -->
+            <div class="new-users">
+                <h2>New Users</h2>
+                <div class="user-list">
+                    <div class="user">
+                        <img src="https://res.cloudinary.com/apideck/image/upload/v1606355124/icons/ziraatkatilim-tr.png">
+                        <h2>{Name}</h2>
+                        <p>54 Min Ago</p>
+                    </div>
+                    <div class="user">
+                        <img src="https://res.cloudinary.com/apideck/image/upload/v1606355124/icons/ziraatkatilim-tr.png">
+                        <h2>{Name}</h2>
+                        <p>3 Hours Ago</p>
+                    </div>
+                    <div class="user">
+                        <img src="https://res.cloudinary.com/apideck/image/upload/v1606355124/icons/ziraatkatilim-tr.png">
+                        <h2>{Name}</h2>
+                        <p>6 Hours Ago</p>
+                    </div>
+                    <div class="user">
+                        <img src="https://res.cloudinary.com/apideck/image/upload/v1606355124/icons/ziraatkatilim-tr.png">
+                        <h2>{Name}</h2>
+                        <p>New User</p>
+                    </div>
+                </div>
+            </div>
+            <!-- End of New Users Section -->
+
+            <!-- Recent Orders Table -->
+            <div class="recent-orders">
+                <h2>Active Users</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Mail</th>
+                            <th>Status</th>
+                            <th>Hour</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+                <a href="#">Show All</a>
+            </div>
+            <!-- End of Recent Orders -->
+
+        </main>
+        <!-- End of Main Content -->
+
+        <!-- Right Section -->
+        
+        <div class="right-section">
+            
+            <!-- End of Nav -->
+
+            <div class="user-profile">
+                <div class="logo">
+                    <img src="https://www.ziraatkatilim.com.tr/themes/custom/zk/logo.svg">
+                    <h2>Yusuf Ali Aşkın</h2>
+                    <p>ZK Bilgi Güvenligi</p>
+                </div>
+            </div>
+
+            <div class="reminders">
+                <div class="header">
+                    <h2>Reminders</h2>
+                    <span class="material-icons-sharp">
+                        notifications_none
+                    </span>
+                </div>
+
+                <div class="notification">
+                    <div class="icon">
+                        <span class="material-icons-sharp">
+                            volume_up
+                        </span>
+                    </div>
+                    <div class="content">
+                        <div class="info">
+                            <h3>Workshop</h3>
+                            <small class="text_muted">
+                                08:00 AM - 12:00 PM
+                            </small>
+                        </div>
+                        <span class="material-icons-sharp">
+                            more_vert
+                        </span>
+                    </div>
+                </div>
+
+                <div class="notification deactive">
+                    <div class="icon">
+                        <span class="material-icons-sharp">
+                            edit
+                        </span>
+                    </div>
+                    <div class="content">
+                        <div class="info">
+                            <h3>Workshop</h3>
+                            <small class="text_muted">
+                                08:00 AM - 12:00 PM
+                            </small>
+                        </div>
+                        <span class="material-icons-sharp">
+                            more_vert
+                        </span>
+                    </div>
+                </div>
+
+                <div class="notification add-reminder">
+                    <div>
+                        <a href="../Users/user-edit/user-edit.html">
+                            <span class="material-icons-sharp">
+                            add
+                        </span>
+                        <h3>Add Reminder</h3>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+    <script src="../Users/js/index.js"></script>
+    <script src="../Users/js/orders.js"></script>
+</body>
+
+</html>

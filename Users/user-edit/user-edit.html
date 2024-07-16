@@ -1,0 +1,358 @@
+<html>
+    <head>
+        <title>ZkSearch</title>
+    
+    <!--Css Links-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="/site/searchbar/searchbar.css">
+    <link rel="stylesheet" type="text/css" href="/site/Users/user-edit/user-edit.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/jszip-2.5.0/dt-1.10.18/af-2.3.0/b-1.5.2/b-colvis-1.5.2/b-flash-1.5.2/b-html5-1.5.2/b-print-1.5.2/cr-1.5.0/fh-3.1.4/r-2.2.2/datatables.min.css">
+    
+
+    <!--Css Links End-->
+  
+    <style type="text/css" id="notify-bootstrap">.notifyjs-bootstrap-base {
+    font-weight: bold;
+    padding: 8px 15px 8px 14px;
+    text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
+    background-color: #fcf8e3;
+    border: 1px solid #fbeed5;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    white-space: nowrap;
+    padding-left: 25px;
+    background-repeat: no-repeat;
+    background-position: 3px 7px;
+  }
+    .notifyjs-bootstrap-error {
+    color: #B94A48;
+    background-color: #F2DEDE;
+    border-color: #EED3D7;
+    background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAtRJREFUeNqkVc1u00AQHq+dOD+0poIQfkIjalW0SEGqRMuRnHos3DjwAH0ArlyQeANOOSMeAA5VjyBxKBQhgSpVUKKQNGloFdw4cWw2jtfMOna6JOUArDTazXi/b3dm55socPqQhFka++aHBsI8GsopRJERNFlY88FCEk9Yiwf8RhgRyaHFQpPHCDmZG5oX2ui2yilkcTT1AcDsbYC1NMAyOi7zTX2Agx7A9luAl88BauiiQ/cJaZQfIpAlngDcvZZMrl8vFPK5+XktrWlx3/ehZ5r9+t6e+WVnp1pxnNIjgBe4/6dAysQc8dsmHwPcW9C0h3fW1hans1ltwJhy0GxK7XZbUlMp5Ww2eyan6+ft/f2FAqXGK4CvQk5HueFz7D6GOZtIrK+srupdx1GRBBqNBtzc2AiMr7nPplRdKhb1q6q6zjFhrklEFOUutoQ50xcX86ZlqaZpQrfbBdu2R6/G19zX6XSgh6RX5ubyHCM8nqSID6ICrGiZjGYYxojEsiw4PDwMSL5VKsC8Yf4VRYFzMzMaxwjlJSlCyAQ9l0CW44PBADzXhe7xMdi9HtTrdYjFYkDQL0cn4Xdq2/EAE+InCnvADTf2eah4Sx9vExQjkqXT6aAERICMewd/UAp/IeYANM2joxt+q5VI+ieq2i0Wg3l6DNzHwTERPgo1ko7XBXj3vdlsT2F+UuhIhYkp7u7CarkcrFOCtR3H5JiwbAIeImjT/YQKKBtGjRFCU5IUgFRe7fF4cCNVIPMYo3VKqxwjyNAXNepuopyqnld602qVsfRpEkkz+GFL1wPj6ySXBpJtWVa5xlhpcyhBNwpZHmtX8AGgfIExo0ZpzkWVTBGiXCSEaHh62/PoR0p/vHaczxXGnj4bSo+G78lELU80h1uogBwWLf5YlsPmgDEd4M236xjm+8nm4IuE/9u+/PH2JXZfbwz4zw1WbO+SQPpXfwG/BBgAhCNZiSb/pOQAAAAASUVORK5CYII=);
+    }
+    .notifyjs-bootstrap-success {
+    color: #B94A48;
+    background-color: #DFF0D8;
+    border-color: #D6E9C6;
+    background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAutJREFUeNq0lctPE0Ecx38zu/RFS1EryqtgJFA08YCiMZIAQQ4eRG8eDGdPJiYeTIwHTfwPiAcvXIwXLwoXPaDxkWgQ6islKlJLSQWLUraPLTv7Gme32zoF9KSTfLO7v53vZ3d/M7/fIth+IO6INt2jjoA7bjHCJoAlzCRw59YwHYjBnfMPqAKWQYKjGkfCJqAF0xwZjipQtA3MxeSG87VhOOYegVrUCy7UZM9S6TLIdAamySTclZdYhFhRHloGYg7mgZv1Zzztvgud7V1tbQ2twYA34LJmF4p5dXF1KTufnE+SxeJtuCZNsLDCQU0+RyKTF27Unw101l8e6hns3u0PBalORVVVkcaEKBJDgV3+cGM4tKKmI+ohlIGnygKX00rSBfszz/n2uXv81wd6+rt1orsZCHRdr1Imk2F2Kob3hutSxW8thsd8AXNaln9D7CTfA6O+0UgkMuwVvEFFUbbAcrkcTA8+AtOk8E6KiQiDmMFSDqZItAzEVQviRkdDdaFgPp8HSZKAEAL5Qh7Sq2lIJBJwv2scUqkUnKoZgNhcDKhKg5aH+1IkcouCAdFGAQsuWZYhOjwFHQ96oagWgRoUov1T9kRBEODAwxM2QtEUl+Wp+Ln9VRo6BcMw4ErHRYjH4/B26AlQoQQTRdHWwcd9AH57+UAXddvDD37DmrBBV34WfqiXPl61g+vr6xA9zsGeM9gOdsNXkgpEtTwVvwOklXLKm6+/p5ezwk4B+j6droBs2CsGa/gNs6RIxazl4Tc25mpTgw/apPR1LYlNRFAzgsOxkyXYLIM1V8NMwyAkJSctD1eGVKiq5wWjSPdjmeTkiKvVW4f2YPHWl3GAVq6ymcyCTgovM3FzyRiDe2TaKcEKsLpJvNHjZgPNqEtyi6mZIm4SRFyLMUsONSSdkPeFtY1n0mczoY3BHTLhwPRy9/lzcziCw9ACI+yql0VLzcGAZbYSM5CCSZg1/9oc/nn7+i8N9p/8An4JMADxhH+xHfuiKwAAAABJRU5ErkJggg==);
+    }
+    .notifyjs-bootstrap-info {
+    color: #3A87AD;
+    background-color: #D9EDF7;
+    border-color: #BCE8F1;
+    background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3QYFAhkSsdes/QAAA8dJREFUOMvVlGtMW2UYx//POaWHXg6lLaW0ypAtw1UCgbniNOLcVOLmAjHZolOYlxmTGXVZdAnRfXQm+7SoU4mXaOaiZsEpC9FkiQs6Z6bdCnNYruM6KNBw6YWewzl9z+sHImEWv+vz7XmT95f/+3/+7wP814v+efDOV3/SoX3lHAA+6ODeUFfMfjOWMADgdk+eEKz0pF7aQdMAcOKLLjrcVMVX3xdWN29/GhYP7SvnP0cWfS8caSkfHZsPE9Fgnt02JNutQ0QYHB2dDz9/pKX8QjjuO9xUxd/66HdxTeCHZ3rojQObGQBcuNjfplkD3b19Y/6MrimSaKgSMmpGU5WevmE/swa6Oy73tQHA0Rdr2Mmv/6A1n9w9suQ7097Z9lM4FlTgTDrzZTu4StXVfpiI48rVcUDM5cmEksrFnHxfpTtU/3BFQzCQF/2bYVoNbH7zmItbSoMj40JSzmMyX5qDvriA7QdrIIpA+3cdsMpu0nXI8cV0MtKXCPZev+gCEM1S2NHPvWfP/hL+7FSr3+0p5RBEyhEN5JCKYr8XnASMT0xBNyzQGQeI8fjsGD39RMPk7se2bd5ZtTyoFYXftF6y37gx7NeUtJJOTFlAHDZLDuILU3j3+H5oOrD3yWbIztugaAzgnBKJuBLpGfQrS8wO4FZgV+c1IxaLgWVU0tMLEETCos4xMzEIv9cJXQcyagIwigDGwJgOAtHAwAhisQUjy0ORGERiELgG4iakkzo4MYAxcM5hAMi1WWG1yYCJIcMUaBkVRLdGeSU2995TLWzcUAzONJ7J6FBVBYIggMzmFbvdBV44Corg8vjhzC+EJEl8U1kJtgYrhCzgc/vvTwXKSib1paRFVRVORDAJAsw5FuTaJEhWM2SHB3mOAlhkNxwuLzeJsGwqWzf5TFNdKgtY5qHp6ZFf67Y/sAVadCaVY5YACDDb3Oi4NIjLnWMw2QthCBIsVhsUTU9tvXsjeq9+X1d75/KEs4LNOfcdf/+HthMnvwxOD0wmHaXr7ZItn2wuH2SnBzbZAbPJwpPx+VQuzcm7dgRCB57a1uBzUDRL4bfnI0RE0eaXd9W89mpjqHZnUI5Hh2l2dkZZUhOqpi2qSmpOmZ64Tuu9qlz/SEXo6MEHa3wOip46F1n7633eekV8ds8Wxjn37Wl63VVa+ej5oeEZ/82ZBETJjpJ1Rbij2D3Z/1trXUvLsblCK0XfOx0SX2kMsn9dX+d+7Kf6h8o4AIykuffjT8L20LU+w4AZd5VvEPY+XpWqLV327HR7DzXuDnD8r+ovkBehJ8i+y8YAAAAASUVORK5CYII=);
+    }
+    .notifyjs-bootstrap-warn {
+    color: #C09853;
+    background-color: #FCF8E3;
+    border-color: #FBEED5;
+    background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAMAAAC6V+0/AAABJlBMVEXr6eb/2oD/wi7/xjr/0mP/ykf/tQD/vBj/3o7/uQ//vyL/twebhgD/4pzX1K3z8e349vK6tHCilCWbiQymn0jGworr6dXQza3HxcKkn1vWvV/5uRfk4dXZ1bD18+/52YebiAmyr5S9mhCzrWq5t6ufjRH54aLs0oS+qD751XqPhAybhwXsujG3sm+Zk0PTwG6Shg+PhhObhwOPgQL4zV2nlyrf27uLfgCPhRHu7OmLgAafkyiWkD3l49ibiAfTs0C+lgCniwD4sgDJxqOilzDWowWFfAH08uebig6qpFHBvH/aw26FfQTQzsvy8OyEfz20r3jAvaKbhgG9q0nc2LbZxXanoUu/u5WSggCtp1anpJKdmFz/zlX/1nGJiYmuq5Dx7+sAAADoPUZSAAAAAXRSTlMAQObYZgAAAAFiS0dEAIgFHUgAAAAJcEhZcwAACxMAAAsTAQCanBgAAAAHdElNRQfdBgUBGhh4aah5AAAAlklEQVQY02NgoBIIE8EUcwn1FkIXM1Tj5dDUQhPU502Mi7XXQxGz5uVIjGOJUUUW81HnYEyMi2HVcUOICQZzMMYmxrEyMylJwgUt5BljWRLjmJm4pI1hYp5SQLGYxDgmLnZOVxuooClIDKgXKMbN5ggV1ACLJcaBxNgcoiGCBiZwdWxOETBDrTyEFey0jYJ4eHjMGWgEAIpRFRCUt08qAAAAAElFTkSuQmCC);
+    }
+    </style><style type="text/css" id="notify-Warning">.notifyjs-Warning-base {
+    white-space: nowrap;
+    background-color: #ff9e0f;
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+    font-size: 1.1em;
+    height: 2.5em;
+    globalPosition: bottom left;
+    showAnimation: slideDown;
+    hideAnimation: slideUp;
+    }
+    </style><style type="text/css" id="notify-Info">.notifyjs-Info-base {
+    white-space: nowrap;
+    background-color: #00cae3;
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+    font-size: 1.1em;
+    height: 2.5em;
+    showAnimation: slideDown;
+    hideAnimation: slideUp;
+    }
+    </style><style type="text/css" id="notify-Danger">.notifyjs-Danger-base {
+    white-space: nowrap;
+    background-color: #f55145;
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+    font-size: 1.1em;
+    height: 2.5em;
+    showAnimation: slideDown;
+    hideAnimation: slideUp;
+    }
+    </style><style type="text/css" id="notify-Success">.notifyjs-Success-base {
+    white-space: nowrap;
+    background-color: #55b559;
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+    font-size: 1.1em;
+    height: 2.5em;
+    showAnimation: slideDown;
+    hideAnimation: slideUp;
+    }
+    </style><style type="text/css" id="core-notify">.notifyjs-corner {
+    position: fixed;
+    margin: 5px;
+    z-index: 1050;
+    }
+    
+    .notifyjs-corner .notifyjs-wrapper,
+    .notifyjs-corner .notifyjs-container {
+    position: relative;
+    display: block;
+    height: inherit;
+    width: inherit;
+    margin: 3px;
+    }
+    
+    .notifyjs-wrapper {
+    z-index: 1;
+    position: absolute;
+    display: inline-block;
+    height: 0;
+    width: 0;
+    }
+    
+    .notifyjs-container {
+    display: none;
+    z-index: 1;
+    position: absolute;
+    }
+    
+    .notifyjs-hidable {
+    cursor: pointer;
+    }
+    
+    [data-notify-text],[data-notify-html] {
+    position: relative;
+    }
+    
+    .notifyjs-arrow {
+    position: absolute;
+    z-index: 2;
+    width: 0;
+    height: 0;
+    }</style></head>
+  <body>
+    
+  <div class="contain">
+    <nav class="navbar navbar-expand-lg navbar-mainbg">
+          <a class="navbar-brand navbar-logo" href="/site/searchbar/searchbar.html" style="padding:0;"><img src="https://res.cloudinary.com/apideck/image/upload/v1606355124/icons/ziraatkatilim-tr" alt="" style="height:2em">  Connector</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><i class="fas fa-bars text-white"></i></button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ml-auto">
+                <div class="hori-selector" style="top: 0px; left: 1409.02px; height: 62px; width: 193.797px;"><div class="left"></div><div class="right"></div></div>
+                <li class="nav-item">
+                    <a href="/site/Dashboard/dashboard.html"><i class="fas fa-home"></i>Dashboard</a>
+                </li>
+                
+                <li class="nav-item active">
+                    <a class="nav-link disabled" href="javascript:void(0);" tabindex="-1" aria-disabled="true"><i class="fas fa-search"></i>Searchbar</a>
+                </li> 
+  
+                <li class="nav-item">
+                    <a href="/site/Users/user.html"><i class="fas fa-user"></i>Users</a>
+                </li>
+  
+                <li class="nav-item">
+                    <a href="/site/terminal/terminal.html"><i class="fas fa-terminal"></i>Terminal</a>
+                </li>
+                
+                <li class="nav-item">
+                  <a href="/site/settings/settings.html"><i class="fas fa-info-circle"></i>İp Host</a>
+                </li>
+  
+                <li class="nav-item">
+                  <a href="/site/connect/connect.html"><i class="fas fa-cog"></i>Connect</a>
+                </li>
+  
+                <li class="nav-item">
+                  <a href="/"><i class="fas fa-plus"></i>New Login</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <main>
+      <div class="container-lg">
+    <div class="row card" style="width:88%; margin-top:2%; margin-bottom:2%; margin-left:6%; padding-bottom:1%;">
+      <div class="col" style="padding:10%;padding-top:3%;padding-bottom:0%;">
+    <form method="POST" action="/search/">
+      <input type="hidden" name="csrfmiddlewaretoken" value="okd2Su19SZWI9aF74fgMdqT3zhnBjgy1nQWTWTMeoz3dGV2tmsCwieeQ15Zmwuk1">
+
+
+      <div class="row">
+        <div class="col">
+          <label for="username_query">Kullanıcı Adı:</label>
+          <input type="text" name="username" value="ya550047" class="form-control" id="username_query" maxlength="100">
+        </div>
+        <div class="col">
+          <label for="ip_query">Terminal Ip:</label>
+          <input type="text" name="ip" class="form-control" id="ip_query" maxlength="20">
+        </div>
+      </div>
+      <div class="row" style="margin-top:1%;">
+        <div class="col">
+          <label for="inlineFormInputName">Başlangıç Tarihi:</label>
+          <input type="datetime-local" name="starting_date" value="2024-04-01T12:26" class="form-control" id="inlineFormInputName" required="">
+        </div>
+        <div class="col">
+          <label for="inlineFormInputName">Bitiş Tarihi:</label>
+          <input type="datetime-local" name="due_date" value="2024-04-03T12:26" class="form-control" id="inlineFormInputName" required="">
+        </div>
+      </div>
+
+    <input class="btn btn-success btn-block btn-lg" type="submit" value="Sorgu" style="margin-top:2%;margin-bottom:3%;">
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    </form>
+      </div>
+    </div>
+    <div class="row card" style="width:88%; margin-top:1%; margin-bottom:2%;  margin-left:6%; ">
+      <div class="col" style="padding:5%;padding-top:2%;padding-bottom:2%;">
+        <button class="btn btn-danger delete-all-button" style="margin-bottom:1%; float:right;"><i class="far fa-trash-alt"></i>Delete All Video Files</button>
+        <div id="table_id_wrapper" class="dataTables_wrapper no-footer"><div class="dt-buttons">      <button class="dt-button buttons-copy buttons-html5" tabindex="0" aria-controls="table_id" type="button"><span>Copy</span></button> <button class="dt-button buttons-csv buttons-html5" tabindex="0" aria-controls="table_id" type="button"><span>CSV</span></button> <button class="dt-button buttons-excel buttons-html5" tabindex="0" aria-controls="table_id" type="button"><span>Excel</span></button> <button class="dt-button buttons-pdf buttons-html5" tabindex="0" aria-controls="table_id" type="button"><span>PDF</span></button> </div><div class="clear"></div><div class="dataTables_length" id="table_id_length"><label>Show <select name="table_id_length" aria-controls="table_id" class=""><option value="10">10</option><option value="25">25</option><option value="50">50</option><option value="100">100</option></select> entries</label></div><div id="table_id_filter" class="dataTables_filter"><label>Search:<input type="search" class="" placeholder="" aria-controls="table_id"></label></div><table id="table_id" class="display cell-border table-border dataTable no-footer" role="grid" aria-describedby="table_id_info">
+          <thead>
+            <tr style="text-align:center;" role="row"><th scope="col" class="table-dark sorting" tabindex="0" aria-controls="table_id" rowspan="1" colspan="1" aria-label="Ip: activate to sort column ascending" style="width: 127px;">Ip</th><th scope="col" class="table-dark sorting" tabindex="0" aria-controls="table_id" rowspan="1" colspan="1" aria-label="Username: activate to sort column ascending" style="width: 319px;">Username</th><th scope="col" class="table-dark sorting_asc" tabindex="0" aria-controls="table_id" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Timestamp: activate to sort column descending" style="width: 349px;">Timestamp</th><th scope="col" class="table-dark sorting" tabindex="0" aria-controls="table_id" rowspan="1" colspan="1" aria-label="Duration: activate to sort column ascending" style="width: 281px;">Duration</th><th scope="col" class="table-dark sorting" tabindex="0" aria-controls="table_id" rowspan="1" colspan="1" aria-label="Actions: activate to sort column ascending" style="width: 262px;">Actions</th></tr>
+          </thead>
+          <tbody>
+
+              
+          <tr class="odd"><td valign="top" colspan="5" class="dataTables_empty">No data available in table</td></tr></tbody>
+        </table><div class="dataTables_info" id="table_id_info" role="status" aria-live="polite">Showing 0 to 0 of 0 entries</div><div class="dataTables_paginate paging_simple_numbers" id="table_id_paginate"><a class="paginate_button previous disabled" aria-controls="table_id" data-dt-idx="0" tabindex="0" id="table_id_previous">Previous</a><span></span><a class="paginate_button next disabled" aria-controls="table_id" data-dt-idx="1" tabindex="0" id="table_id_next">Next</a></div></div>
+      </div>
+    </div>
+  </div>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/jszip-2.5.0/dt-1.10.18/af-2.3.0/b-1.5.2/b-colvis-1.5.2/b-flash-1.5.2/b-html5-1.5.2/b-print-1.5.2/cr-1.5.0/fh-3.1.4/r-2.2.2/datatables.min.css">
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.36/pdfmake.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.36/vfs_fonts.js"></script>
+<script type="text/javascript" src="https://cdn.datatables.net/v/dt/jszip-2.5.0/dt-1.10.18/af-2.3.0/b-1.5.2/b-colvis-1.5.2/b-flash-1.5.2/b-html5-1.5.2/b-print-1.5.2/cr-1.5.0/fh-3.1.4/r-2.2.2/datatables.min.js"></script>
+<script type="text/javascript" src="/static/js/notify.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/moment-with-locales.min.js"></script>
+<script type="text/javascript" src="https://cdn.datatables.net/plug-ins/1.13.7/sorting/datetime-moment.js"></script>
+<script>
+  $(document).ready(function(){
+    $('.delete-all-button').click(function(){
+      $.ajax({
+        url:/deletevids/,
+        type:'post',
+        data:{
+          csrfmiddlewaretoken:'okd2Su19SZWI9aF74fgMdqT3zhnBjgy1nQWTWTMeoz3dGV2tmsCwieeQ15Zmwuk1'
+        },
+        success:function(response){
+          $.notify("Deleted all downloaded videos.",{
+            globalPosition:'bottom left',
+            style: 'Warning',
+        });
+        },
+      });
+    });
+  });
+</script>
+<script>
+$(document).ready(function(){
+  $('.convert-button').click(function(){
+    var self = this;
+    $.notify("Starting video convert.It may take some time.",{style: 'Info',"globalPosition":'bottom left',});
+    $.ajax({
+      url:/encode/,
+      type:'post',
+      data:{
+        vid_id: $(this).val(),
+        csrfmiddlewaretoken:'okd2Su19SZWI9aF74fgMdqT3zhnBjgy1nQWTWTMeoz3dGV2tmsCwieeQ15Zmwuk1'
+      },
+      success:function(response){
+        $(self).parent().children(".delete-button").show(1000);
+        $(self).parent().children("a").children(".download-button").show(1000);
+        $(self).hide(1000);
+        $.notify("Video covertion succeeded.",{style: 'Success',"globalPosition":'bottom left',});
+      },
+    });
+
+  });
+
+});
+</script>
+<script type="text/javascript" src="/static/js/notify-styles.js"></script>
+<script>
+  $(document).ready(function(){
+    $('.delete-button').click(function(){
+      var self = this;
+      $.ajax({
+        url:/deletevid/,
+        type:'post',
+        data:{
+          vid_id: $(this).val(),
+          csrfmiddlewaretoken:'okd2Su19SZWI9aF74fgMdqT3zhnBjgy1nQWTWTMeoz3dGV2tmsCwieeQ15Zmwuk1'
+        },
+        success:function(response){
+          $(self).parent().children(".convert-button").show(1000);
+          $(self).parent().children("a").children(".download-button").hide(1000);
+          $(self).hide(1000);
+          $.notify("Deleting converted video.",{
+            globalPosition:'bottom left',
+            style: 'Warning',
+
+        });
+        },
+      });
+
+    });
+
+  });
+</script>
+<script>
+  $(document).ready(function() {
+    $.fn.dataTable.moment('DD MMMM YYYY HH:mm', 'tr');
+    $('#table_id').DataTable({
+      order: [[2, 'asc']],
+      dom: 'B<"clear">lfrtip',
+      buttons: {
+          name: 'primary',
+          buttons: [ 'copy', 'csv', 'excel','pdf']
+        }      
+    });
+  });
+</script>
+
+
+
+</main>
+        
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+    <script src="https://cdn.datatables.net/v/dt/jszip-2.5.0/dt-1.10.18/af-2.3.0/b-1.5.2/b-colvis-1.5.2/b-flash-1.5.2/b-html5-1.5.2/b-print-1.5.2/cr-1.5.0/fh-3.1.4/r-2.2.2/datatables.min.js"></script>
+            <script src="/site/searchbar/js/styles.js"></script>
+            <script src="/site/searchbar/js/searchbar.js"></script>
+            <script src="/site/Users/user-edit/js/user-edit.js"></script>
+    </body>
+</html>

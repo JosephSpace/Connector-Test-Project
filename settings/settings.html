@@ -1,0 +1,284 @@
+<html>
+  <!----======== CSS and Boxicons ======== -->
+  <head>
+    <!--Css-->
+    <link rel='stylesheet' href='../sidebar/sidebar.css'>
+    <link rel='stylesheet' href='../sidebar/navbar.css'>
+    <link rel='stylesheet' href='../settings/down_button.css'>
+    <link rel='stylesheet' href='../settings/settings.css'>
+  <!--Bootstrap-->
+  <!--İcons and Fonts-->
+    <link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.4.1/css/all.css' integrity='sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz' crossorigin='anonymous'>
+</head>  
+<!--Bootstrap-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/apexcharts/3.35.5/apexcharts.min.js"></script>  
+<!--İcons and Fonts-->
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
+<link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+<link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp" rel="stylesheet">
+          <title>ZkConnector</title>
+      </head>
+      
+      <body>
+      
+          <div class="container">
+              <!-- Sidebar Section -->
+              <aside>
+                  <div class="toggle">
+                      <div class="logo">
+                          <img src="https://res.cloudinary.com/apideck/image/upload/v1606355124/icons/ziraatkatilim-tr.png">
+                          <h2>Conn<span class="danger">ector</span></h2>
+                      </div>
+                      <div class="close" id="close-btn">
+                          <span class="material-icons-sharp">
+                              close
+                          </span>
+                      </div>
+                  </div>
+      
+                  <div class="sidebar">
+                    <a href="../Dashboard/dashboard.html">
+                      <span class="material-icons-sharp">
+                          home
+                      </span>
+                      <h3>Dashboard</h3>
+                  </a>
+                  <a href="../searchbar/searchbar.html">
+                    <span class="material-icons-sharp">
+                        search
+                    </span>
+                    <h3>Searchbar</h3>
+                  </a>
+                  
+                  <a href="../Users/user.html">
+                  <span class="material-icons-sharp">
+                      person_outline
+                  </span>
+                  <h3>Users</h3>
+                  </a>
+      
+                  <a href="/3-Test Ortamı/1-Guac-Dashboard/main.html">
+                    <span class="material-icons-sharp">
+                      terminal
+                    </span>
+                      <h3>Test Ortamı</h3>
+                    </a>
+                  
+                  <a href="../settings/settings.html" class="active">
+                      <span class="material-icons-sharp">
+                          report_gmailerrorred
+                      </span>
+                      <h3>İp Host</h3>
+                  </a>
+                  <a href="../connect/connect.html">
+                      <span class="material-icons-sharp">
+                          settings
+                      </span>
+                      <h3>Connect</h3>
+                  </a>
+                  <a href="#">
+                      <span class="material-icons-sharp">
+                          add
+                      </span>
+                      <h3>New Login</h3>
+                  </a>
+                  <a href="#">
+                      <span class="material-icons-sharp">
+                          logout
+                      </span>
+                      <h3>Logout</h3>
+                  </a>
+                  </div>
+              </aside>
+              <!-- End of Sidebar Section -->
+<!----======== Main HTML ======== -->
+<div class='main'>
+  <div class="right-section">
+    <div class="nav">
+        <button id="menu-btn">
+            <span class="material-icons-sharp">
+                menu
+            </span>
+        </button>
+        <div class="dark-mode">
+            <span class="material-icons-sharp active">
+                light_mode
+            </span>
+            <span class="material-icons-sharp">
+                dark_mode
+            </span>
+        </div>
+  
+        <div class="profile">
+            <div class="info">
+                <p>Hey, <b>ya550047</b></p>
+                <small class="text-muted">Admin</small>
+            </div>
+            <div class="profile-photo">
+                <img src="https://res.cloudinary.com/apideck/image/upload/v1606355124/icons/ziraatkatilim-tr.png">
+            </div>
+        </div>
+  
+    </div>
+    <!-- End of Nav -->
+    </div>  
+  <div class='pctdetails'> <!--Outside Box // px, height, width-->
+        <div class='pctrecentOrders'> <!--Box One Background and all fonction-->
+          <table>
+            <tbody>
+            <tr>
+              <form action='https://zkportal.ziraatkatilim.local/rehber?combine=yusuf+ali&baskanlik=All'>
+                 <!-- //dashboard.html-->
+                <tr>Hostname:</tr>
+              <div id='pctenalt'>
+                <input type='text' id='search' name='fname'> <!--Search text-->
+              </div>
+                <button class='tcpbutton' role='button'>Ping Host</button> <!--Button Reset-->
+                  <input type='reset' class='tcpbutton' value='Reset'> <!--Button and Reset Button // tcpbutton //-->
+              </form>   
+                <span class='status delivered'></span>
+            </tr>                        
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+<!--2. Box and box px, font, height-->
+
+  <div class='pctdetails'> <!--Outside Box // px, height, width-->
+    <div class='pctrecentOrders'> <!--İnside Box // all founction-->
+      <table>
+        <tbody>
+          <tr>
+            <form action='https://'>
+              <!--Form Action // BackEnd-->
+              <tr>Hostname:</tr>
+                <div id='pctenalt'>
+                  <input type='search' id='search' name="https://"> <!--Search text-->
+                </div>
+                  <button class='tcpbutton' role='button'>Traculate Host</button> <!--Button Trac-->
+                  <input type='reset' class='tcpbutton' value='Reset'> <!--Button Reset-->
+            </form>
+          </tr>                       
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+<!--3. Box and box px, font, height-->    
+
+  <div class='tcpdetails'> <!--Outside Box // px, height, width-->
+    <div class='tcprecentOrders'> <!--İnside Box // all founction-->
+      <table>
+        <tbody>
+          <form action='{.URL}' ping="{.URL}">
+            <!--Form Action // BackEnd-->
+            <tr>Hostname:</tr> <!---->
+              <div id='pctenalt'>
+                <input type='text' id='search' name='fname'> <!--Search text-->
+              </div>
+              <hr>
+            <tr>Tcp Host:</tr>
+              <div id='pctenalt'>
+                <input type='text' id='search' name='fname'> <!--Search text-->
+              </div>
+              <button class='tcpbutton' role='button'>Traculate Host</button>
+            <input type='reset' class='tcpbutton' value='Reset'>                      
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+<!--4. Box and box px, font, height-->
+
+  <div class='tcpsdetails'> <!--Outside Box // px, height, width-->
+    <div class='tcpsrecentOrders'> <!--İnside Box // all founction-->
+      <table>
+        <tbody>
+          <form action='{.URL}' ping="{.URL}">
+            <tr>View Files</tr> <!---->
+              <span class='status delivered'></span>                      
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+<!--last Box and box px, font, height-->
+
+  <div class='details'> <!--Outside Box // px, height, width-->
+    <div class='recentOrders'> <!--İnside Box // all founction-->
+      <table>
+        <tbody>
+          <form action='{.URL}' ping="{.URL}">
+
+          <tr>Hostname:
+            <div id='pctenalt'>
+              <input type='text' id='search'> <!--Search text-->
+            </div> 
+            <hr>
+            </tr>
+          <tr>
+            <div class='names'>
+            Logtype: <!--NAME-->
+            </div>
+                <form action=''> <!--Form Action // BackEnd-->
+                  <select name='sys' id='sys'>
+                    <option value='syslog'>Syslog</option>
+                    <option value='wazuh'>Wazuh</option>
+                  </select><hr>
+                </form>
+                
+              <tr>
+                <div class='namess'>
+                  Day: <!--NAME-->
+                  </div>
+                  
+                    <form action=''> <!-- FORM ACTİON // BACKEND >>>>>>> -->
+                      <div class='select-dropdown'>
+                        <select name='sysup' id='sysup'>
+                          <option value='volvo'>Monday</option>   <!--DAY 1-->
+                          <option value='saab'>Tuesday</option>   <!--DAY 2-->
+                          <option value='saab'>Wednesday</option> <!--DAY 3-->
+                          <option value='saab'>Thursday</option>  <!--DAY 4-->
+                          <option value='saab'>Friday</option>    <!--DAY 5-->
+                          <option value='saab'>Saturday</option>  <!--DAY 6-->
+                          <option value='saab'>Sunday</option>    <!--DAY 7-->
+                        </select>
+                      </div>
+                      <hr>
+                      
+                      
+                    <!--Wrap Button 'Blue And Orange' Loading And Downloading-->
+                      <div id='wrap'>
+                        <a href='' class='btn-slide'>
+                          <span class='circle'><i class='bx bx-rocket'></i></span>
+                          <span class='title'>Görüntüle</span>
+                          <span class='title-hover'>Tıkla</span>
+                        </a>
+                        <a href='../settings/settings.html' download class='btn-slide2'>
+                          <span class='circle2'><i class='bx bx-download' ></i></span>
+                          <span class='title2'>İndir</span>
+                          <span class='title-hover2'>Tıkla</span>
+                        </a>
+                      </div>
+                    </form>
+                  <span class='status delivered'></span>
+              </tr>                       
+            </tbody>
+          </table>
+    </div>
+
+    </div> <!--Details end-->
+    <!-- footer section start -->
+  
+  <!-- footer section end -->
+  <!-- footer copy right section start -->
+
+  <!-- footer copy right section end -->
+  </div> <!--Main end-->
+</body>
+
+
+<script src='../sidebar/sidebar.js'></script>
+</html>

@@ -1,0 +1,220 @@
+<html>
+<!----======== CSS and Boxicons ======== -->
+<head>
+  <!--Css-->
+    <link rel="stylesheet" href="../sidebar/sidebar.css">
+    <link rel="stylesheet" href="../sidebar/navbar.css">
+    <link rel="stylesheet" href="../connect/connect.css">
+  <!--İcons and Fonts-->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp" rel="stylesheet">
+</head>
+<!--İcons and Fonts-->
+ <body>   
+    
+    <div class="container">
+        <!-- Sidebar Section -->
+        <aside>
+            <div class="toggle">
+                <div class="logo">
+                    <img src="https://res.cloudinary.com/apideck/image/upload/v1606355124/icons/ziraatkatilim-tr.png">
+                    <h2>Conn<span class="danger">ector</span></h2>
+                </div>
+                <div class="close" id="close-btn">
+                    <span class="material-icons-sharp">
+                        close
+                    </span>
+                </div>
+            </div>
+
+            <div class="sidebar">
+              <a href="../Dashboard/dashboard.html">
+                <span class="material-icons-sharp">
+                    home
+                </span>
+                <h3>Dashboard</h3>
+            </a>
+            <a href="../searchbar/searchbar.html">
+              <span class="material-icons-sharp">
+                  search
+              </span>
+              <h3>Searchbar</h3>
+            </a>
+            
+            <a href="../Users/user.html">
+            <span class="material-icons-sharp">
+                person_outline
+            </span>
+            <h3>Users</h3>
+            </a>
+
+            <a href="/3-Test Ortamı/1-Guac-Dashboard/main.html">
+            <span class="material-icons-sharp">
+              terminal
+            </span>
+              <h3>Test Ortamı</h3>
+            </a>
+            
+            <a href="../settings/settings.html">
+                <span class="material-icons-sharp">
+                    report_gmailerrorred
+                </span>
+                <h3>İp Host</h3>
+            </a>
+            <a href="../connect/connect.html" class="active">
+                <span class="material-icons-sharp">
+                    settings
+                </span>
+                <h3>Connect</h3>
+            </a>
+            <a href="#">
+                <span class="material-icons-sharp">
+                    add
+                </span>
+                <h3>New Login</h3>
+            </a>
+            <a href="#">
+                <span class="material-icons-sharp">
+                    logout
+                </span>
+                <h3>Logout</h3>
+            </a>
+            </div>
+        </aside>
+  <!-- End of Sidebar Section -->
+  <div class="main">
+    <div class="right-section">
+      <div class="nav">
+          <button id="menu-btn">
+              <span class="material-icons-sharp">
+                  menu
+              </span>
+          </button>
+          <div class="dark-mode">
+              <span class="material-icons-sharp active">
+                  light_mode
+              </span>
+              <span class="material-icons-sharp">
+                  dark_mode
+              </span>
+          </div>
+    
+          <div class="profile">
+              <div class="info">
+                  <p>Hey, <b>ya550047</b></p>
+                  <small class="text-muted">Admin</small>
+              </div>
+              <div class="profile-photo">
+                  <img src="https://res.cloudinary.com/apideck/image/upload/v1606355124/icons/ziraatkatilim-tr.png">
+              </div>
+          </div>
+      </div>
+    </div>
+    <!-- End of Nav -->
+
+    <div id="demo">
+        <h1>Bg Connect</h1>
+        <!-- Responsive table starts here -->
+        <div class="table-responsive-vertical shadow-z-1">
+        <!-- Table starts here -->
+        <table id="table" class="table table-hover table-mc-light-blue">
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Http Name</th>
+                <th>İp Address</th>
+                <th>Link</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td data-title="ID">1</td>
+                <td data-title="Name">Wazuh</td>
+                <td data-title="Status">zkxswazuhsiem01.ziraatkatilim.local</td>
+                <td data-title="İp Address">10.212.12.20</td>
+                <td data-title="Link">
+                  <a href="https://zkxswazuhsiem01.ziraatkatilim.local/app/home#/" target="_blank">Connect</a>
+                </td>
+              </tr>
+
+
+              <tr>
+                <td data-title="ID">2</td>
+                <td data-title="Name">Guacview</td>
+                <td data-title="Status">zkxsguacview.ziraatkatilim.local</td>
+                <td data-title="İp Address">10.212.0.185</td>
+                <td data-title="Link">
+                  <a href="https://zkxsguacview/" target="_blank">Connect</a>
+                </td>
+              </tr>
+
+
+              <tr>
+                <td data-title="ID">3</td>
+                <td data-title="Name">Misp</td>
+                <td data-title="Status">zkxswazuhprtnr1.ziraatkatilim.local</td>
+                <td data-title="İp Address">10.212.12.40</td>
+                <td data-title="Link">
+                  <a href="https://10.212.12.40/users/login" target="_blank">Connect</a>
+                </td>
+              </tr>
+
+
+              <tr>
+                <td data-title="ID">4</td>
+                <td data-title="Name">The Hive</td>
+                <td data-title="Status">zkxswazuhprtnr1.ziraatkatilim.local</td>
+                <td data-title="İp Address">10.212.12.20:19443</td>
+                <td data-title="Link">
+                    <a href="https://zkxswazuhprtnr1.ziraatkatilim.local:19443/index.html#!/login" target="_blank">Connect</a></td>
+              </tr>
+
+
+              <tr>
+                <td data-title="ID">5</td>
+                <td data-title="Name">Grafana</td>
+                <td data-title="Status">zkxswazuhprtnr1.ziraatkatilim.local</td>
+                <td data-title="İp Address">10.212.12.20:3000</td>
+                <td data-title="Link">
+                  <a href="https://zkxswazuhprtnr1.ziraatkatilim.local:3000/login" target="_blank">Connect</a>
+                </td>
+              </tr>
+
+              <tr>
+                <td data-title="ID">6</td>
+                <td data-title="Name">Gophish</td>
+                <td data-title="Status">gopshish.ziraatkatilim.local</td>
+                <td data-title="İp Address">10.212.0.147:3333</td>
+                <td data-title="Link">
+                  <a href="https://10.212.0.147:3333/login?next=%2F" target="_blank">Connect</a>
+                </td>
+              </tr>
+
+              <tr>
+                <td data-title="ID">7</td>
+                <td data-title="Name">Zk Gophish</td>
+                <td data-title="Status">zkxsgophish.ziraatkatilim.local</td>
+                <td data-title="İp Address">10.212.0.174:3333</td>
+                <td data-title="Link">
+                  <a href="https://10.212.0.174:3333/login?next=%2F" target="_blank">Connect</a>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <!-- Table Constructor change table classes, you don't need it in your project -->
+    </div>
+</div>
+      <!-- charts-card and title-->
+      
+  </div>
+  <script src="../Users/js/index.js"></script>
+</div>
+</body>
+</html>
+
+      
+      
